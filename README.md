@@ -1,1 +1,1 @@
-# connorchongphotography.github.io
+# connorchongphotography
