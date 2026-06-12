@@ -612,7 +612,7 @@ function openEditPhoto(id) {
     <div class="modal-field"><label>Image URL</label><input id="m_src" type="url" value="${photo.src}"></div>
     <div class="modal-field"><label>Title</label><input id="m_title" type="text" value="${photo.title}"></div>
     <div class="modal-field"><label>Category</label>
-      <select id="m_cat">${['landscape','portrait','street','event'].map(c=>`<option value="${c}"${photo.category===c?' selected':''}>${c[0].toUpperCase()+c.slice(1)}</option>`).join('')}</select>
+      <select id="m_cat">${['pets','family','portrait','street'].map(c=>`<option value="${c}"${photo.category===c?' selected':''}>${c[0].toUpperCase()+c.slice(1)}</option>`).join('')}</select>
     </div>
     <div class="modal-field"><label style="flex-direction:row;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="m_wide"${photo.wide?' checked':''}> Wide layout</label></div>
     <div class="modal-field" style="margin-top:0.5rem;"><button onclick="deletePhoto(${id})" style="font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.2rem;background:transparent;border:1px solid rgba(255,100,100,0.3);color:rgba(255,100,100,0.7);cursor:pointer;border-radius:2px;">Remove Photo</button></div>
@@ -772,6 +772,3 @@ renderGallery();
 </script>
 </body>
 </html>
-
-
-google-site-verification: google43b2f975890f5bcb.html
