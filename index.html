@@ -417,16 +417,12 @@
 <!-- MODAL -->
 <div class="modal-overlay" id="editModal">
   <div class="modal">
-    <h3 id="modalTitle">Edit Photo</h3>
-    <p class="modal-sub" id="modalSub">Update this photo's details or remove it.</p>
+    <h3 id="modalTitle">Edit About Text</h3>
+    <p class="modal-sub" id="modalSub">Update your bio paragraphs.</p>
     <div id="modalBody">
-    <div class="modal-field"><label>Image URL</label><input id="m_src" type="url" value="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7585%20-%2000000001.jpg?raw=true"></div>
-    <div class="modal-field"><label>Title</label><input id="m_title" type="text" value="."></div>
-    <div class="modal-field"><label>Category</label>
-      <select id="m_cat"><option value="pets">Pets</option><option value="family" selected="">Family</option><option value="portrait">Portrait</option><option value="street">Street</option></select>
-    </div>
-    <div class="modal-field"><label style="flex-direction:row;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="m_wide"> Wide layout</label></div>
-    <div class="modal-field" style="margin-top:0.5rem;"><button onclick="deletePhoto(14)" style="font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.2rem;background:transparent;border:1px solid rgba(255,100,100,0.3);color:rgba(255,100,100,0.7);cursor:pointer;border-radius:2px;">Remove Photo</button></div>
+    <div class="modal-field"><label>Paragraph 1</label><textarea id="a_p1" style="height:80px">I'm Connor Chong, a Las Vegas photographer specializing in pet photography, family photos, and portraits. My focus is creating natural, high-quality images that capture genuine personality and connection.</textarea></div>
+    <div class="modal-field"><label>Paragraph 2</label><textarea id="a_p2" style="height:80px">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just $1 per photo, and I also offer printed and framed photographs so your favorite memories can become lasting artwork.</textarea></div>
+    <div class="modal-field"><label>Paragraph 3</label><textarea id="a_p3" style="height:80px">Whether you're celebrating your family, your pet, or yourself, I'm committed to delivering images that stand out and last a lifetime.</textarea></div>
   </div>
     <div class="modal-actions">
       <button class="modal-btn primary" id="modalSave">Save Changes</button>
