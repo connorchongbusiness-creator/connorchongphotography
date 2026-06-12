@@ -81,10 +81,7 @@
 
   /* ABOUT */
   #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-  .about-img-wrap { position: relative; }
-  .about-img-wrap::before { content: ''; position: absolute; top: -16px; left: -16px; right: 16px; bottom: 16px; border: 1px solid rgba(201,184,154,0.15); pointer-events: none; }
-  .about-img-wrap img { width: 100%; aspect-ratio: 3/4; object-fit: cover; filter: brightness(0.82) saturate(0.85); display: block; }
+  .about-grid { max-width: 800px; margin: 0 auto; }
   .about-text p { color: rgba(240,237,232,0.7); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.9; }
   .about-text p strong { color: var(--text); font-weight: 400; }
 
@@ -227,9 +224,6 @@
 
 <section id="about">
   <div class="about-grid">
-    <div class="about-img-wrap">
-      <img src="https://images.unsplash.com/photo-1552168324-d612d77725e3?w=800&q=80" alt="Connor Chong" id="aboutImg">
-    </div>
     <div class="about-text">
       <p class="section-label">About</p>
       <h2 class="section-title">The Eye<br><em>Behind the Lens</em></h2>
@@ -237,7 +231,6 @@
       <p id="aboutP1">I'm Connor Chong, a Las Vegas photographer specializing in pet photography, family photos, and portraits. My focus is creating natural, high-quality images that capture genuine personality and connection.</p>
       <p id="aboutP2">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just $1 per photo, and I also offer printed and framed photographs so your favorite memories can become lasting artwork.</p>
       <p id="aboutP3">Whether you're celebrating your family, your pet, or yourself, I'm committed to delivering images that stand out and last a lifetime. Let's create something unforgettable.</p>
-    </div>
   </div>
 </section>
 
@@ -299,9 +292,10 @@
           <label>Project Type</label>
           <select name="project_type">
             <option value="">Select a service...</option>
+            <option>Pet Photography</option>
+            <option>Family Photos</option>
             <option>Portrait Session</option>
-            <option>Event Coverage</option>
-            <option>Commercial Work</option>
+            <option>Editing & Prints</option>
             <option>Other</option>
           </select>
         </div>
