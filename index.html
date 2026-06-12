@@ -216,10 +216,10 @@
     <div class="divider"></div>
     <div class="gallery-filters" id="filterBtns">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="landscape">Landscape</button>
+      <button class="filter-btn" data-filter="pets">Pets</button>
+      <button class="filter-btn" data-filter="family">Family</button>
       <button class="filter-btn" data-filter="portrait">Portrait</button>
       <button class="filter-btn" data-filter="street">Street</button>
-      <button class="filter-btn" data-filter="event">Event</button>
     </div>
   </div>
   <div class="gallery-grid" id="galleryGrid"></div>
@@ -234,9 +234,9 @@
       <p class="section-label">About</p>
       <h2 class="section-title">The Eye<br><em>Behind the Lens</em></h2>
       <div class="divider"></div>
-      <p id="aboutP1">I'm Connor Chong — a photographer based in Las Vegas, Nevada, with a passion for capturing moments that linger long after the shutter clicks. My work spans landscapes, portraits, street photography, and live events.</p>
-      <p id="aboutP2">Every frame is an opportunity to freeze something fleeting — the quality of light at dusk, an unguarded expression, the geometry hidden in everyday spaces. I bring the same level of intention to every project, no matter the scale.</p>
-      <p id="aboutP3">Available for commercial, editorial, and personal commissions. Let's create something worth keeping.</p>
+      <p id="aboutP1">I'm Connor Chong, a Las Vegas photographer specializing in pet photography, family photos, and portraits. My focus is creating natural, high-quality images that capture genuine personality and connection.</p>
+      <p id="aboutP2">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just $1 per photo, and I also offer printed and framed photographs so your favorite memories can become lasting artwork.</p>
+      <p id="aboutP3">Whether you're celebrating your family, your pet, or yourself, I'm committed to delivering images that stand out and last a lifetime. Let's create something unforgettable.</p>
     </div>
   </div>
 </section>
@@ -249,18 +249,18 @@
     <div class="services-grid">
       <div class="service-card">
         <div class="service-num">01</div>
-        <div class="service-title">Portrait Sessions</div>
-        <p class="service-desc">Individual, couples, and family portraits. Studio or on-location. Tailored to your vision, delivered with intention.</p>
+        <div class="service-title">Pet Photography</div>
+        <p class="service-desc">Natural, high-quality images that capture your pet's genuine personality. On-location sessions tailored to your animal's comfort.</p>
       </div>
       <div class="service-card">
         <div class="service-num">02</div>
-        <div class="service-title">Event Coverage</div>
-        <p class="service-desc">Corporate events, live performances, and milestone celebrations. Candid and editorial approaches, every time.</p>
+        <div class="service-title">Family & Portraits</div>
+        <p class="service-desc">Candid and posed sessions for families, couples, and individuals. Images you'll be proud to share and display for years to come.</p>
       </div>
       <div class="service-card">
         <div class="service-num">03</div>
-        <div class="service-title">Commercial Work</div>
-        <p class="service-desc">Product, brand, and editorial photography for businesses looking to elevate their visual identity.</p>
+        <div class="service-title">Editing & Prints</div>
+        <p class="service-desc">Professional photo editing for just $1 per photo. Printed and framed photographs also available — turn your favorite memories into lasting artwork.</p>
       </div>
     </div>
   </div>
@@ -587,7 +587,7 @@ function openAddPhoto() {
     <div class="modal-field"><label>Image URL</label><input id="m_src" type="url" placeholder="https://example.com/photo.jpg"></div>
     <div class="modal-field"><label>Title</label><input id="m_title" type="text" placeholder="Photo title"></div>
     <div class="modal-field"><label>Category</label>
-      <select id="m_cat"><option value="landscape">Landscape</option><option value="portrait">Portrait</option><option value="street">Street</option><option value="event">Event</option></select>
+      <select id="m_cat"><option value="pets">Pets</option><option value="family">Family</option><option value="portrait">Portrait</option><option value="street">Street</option></select>
     </div>
     <div class="modal-field"><label style="flex-direction:row;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="m_wide"> Wide layout (spans 2 columns)</label></div>
   `, () => {
