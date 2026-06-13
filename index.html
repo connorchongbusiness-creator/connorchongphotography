@@ -1,8 +1,16 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Connor Chong Photography</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet">
+<title>Connor Chong Photography | Las Vegas Pet, Family & Portrait Photographer</title>
+<meta name="description" content="Connor Chong Photography — Las Vegas photographer specializing in pet photography, family photos, and portraits. Professional photo editing $1/photo. Printed & framed photos available.">
+<meta name="keywords" content="Connor Chong, Connor Chong Photography, Las Vegas photographer, pet photographer Las Vegas, family photographer Las Vegas, portrait photographer Las Vegas">
+<meta property="og:title" content="Connor Chong Photography">
+<meta property="og:description" content="Las Vegas photographer specializing in pet photography, family photos, and portraits.">
+<meta property="og:url" content="https://connorchongphotography.com">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -14,15 +22,11 @@
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
-
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.4rem 3rem; background: linear-gradient(to bottom, rgba(14,14,14,0.95) 0%, transparent 100%); backdrop-filter: blur(4px); }
   .nav-logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; letter-spacing: 0.08em; color: var(--text); text-decoration: none; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { font-family: var(--font-body); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.25s; }
   .nav-links a:hover { color: var(--text); }
-
-  /* HERO */
   #hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=80') center/cover no-repeat; filter: brightness(0.28); transform: scale(1.04); animation: heroZoom 12s ease-out forwards; }
   @keyframes heroZoom { to { transform: scale(1.0); } }
@@ -36,15 +40,11 @@
   .hero-scroll span { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollPulse 2.5s ease-in-out infinite; }
   @keyframes scrollPulse { 0%, 100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.15); } }
-
-  /* SECTIONS */
   section { padding: 7rem 3rem; }
   .section-label { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
   .section-title { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.15; color: var(--text); margin-bottom: 2.5rem; }
   .section-title em { font-style: italic; color: var(--accent); }
   .divider { width: 48px; height: 1px; background: var(--accent); margin: 0 0 2.5rem; opacity: 0.5; }
-
-  /* GALLERY */
   #gallery { background: var(--bg); }
   .gallery-header { max-width: 1400px; margin: 0 auto 3rem; }
   .gallery-filters { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
@@ -55,18 +55,16 @@
   .gallery-item.wide { grid-column: span 2; aspect-ratio: 8/5; }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease; filter: brightness(0.88); }
   .gallery-item:hover img { transform: scale(1.06); filter: brightness(1.0); }
-  .gallery-item-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,14,14,0.7) 0%, transparent 50%); opacity: 0; transition: opacity 0.35s; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; }
+  .gallery-item-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,14,14,0.5) 0%, transparent 50%); opacity: 0; transition: opacity 0.35s; }
   .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-  .gallery-item-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 300; color: var(--text); letter-spacing: 0.04em; }
-  .gallery-item-cat { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+  .gallery-item-title { display: none; }
+  .gallery-item-cat { display: none; }
   .gallery-edit-btn { position: absolute; top: 10px; right: 10px; background: rgba(14,14,14,0.8); border: 1px solid var(--border); color: var(--accent); font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 10px; cursor: pointer; border-radius: 2px; opacity: 0; transition: opacity 0.2s; }
   .gallery-item:hover .gallery-edit-btn { opacity: 1; }
   .add-photo-btn { display: flex; align-items: center; justify-content: center; aspect-ratio: 4/5; border: 1px dashed rgba(201,184,154,0.2); background: transparent; cursor: pointer; color: var(--muted); flex-direction: column; gap: 10px; transition: all 0.3s; border-radius: 2px; }
   .add-photo-btn:hover { border-color: var(--accent); color: var(--accent); background: rgba(201,184,154,0.03); }
   .add-photo-btn svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.5; }
   .add-photo-btn span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
-
-  /* LIGHTBOX */
   .lightbox { position: fixed; inset: 0; z-index: 999; background: rgba(8,8,8,0.97); display: none; align-items: center; justify-content: center; }
   .lightbox.open { display: flex; }
   .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border: 1px solid var(--border); }
@@ -76,14 +74,10 @@
   .lightbox-nav:hover { color: var(--text); }
   .lightbox-prev { left: 1rem; }
   .lightbox-next { right: 1rem; }
-
-  /* ABOUT */
   #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .about-grid { max-width: 800px; margin: 0 auto; }
   .about-text p { color: rgba(240,237,232,0.7); margin-bottom: 1.2rem; font-size: 0.95rem; line-height: 1.9; }
   .about-text p strong { color: var(--text); font-weight: 400; }
-
-  /* SERVICES */
   #services { background: var(--bg); }
   .services-inner { max-width: 1100px; margin: 0 auto; }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--border); margin-top: 3rem; }
@@ -93,8 +87,6 @@
   .service-num { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: rgba(201,184,154,0.15); line-height: 1; margin-bottom: 1.2rem; }
   .service-title { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--text); margin-bottom: 0.8rem; }
   .service-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.8; }
-
-  /* CONTACT */
   #contact { background: var(--bg2); border-top: 1px solid var(--border); }
   .contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; }
   .contact-info { padding-top: 0.5rem; }
@@ -117,17 +109,11 @@
   .submit-btn:hover { background: var(--text); }
   .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
   .form-success { display: none; font-family: var(--font-display); font-size: 1.1rem; color: var(--accent); font-style: italic; margin-top: 0.5rem; }
-
-  /* FOOTER */
   footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; }
   .footer-copy { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--muted); }
   .footer-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 300; color: rgba(240,237,232,0.3); letter-spacing: 0.08em; cursor: default; user-select: none; }
-
-  /* DEV MODE BADGE */
   .dev-badge { position: fixed; top: 1rem; right: 1rem; z-index: 200; background: rgba(201,184,154,0.12); border: 1px solid rgba(201,184,154,0.3); color: var(--accent); font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; display: none; }
   .dev-badge.show { display: block; }
-
-  /* EDIT TOOLBAR */
   .edit-toolbar { position: fixed; bottom: 2rem; right: 2rem; z-index: 150; display: none; flex-direction: column; gap: 0.6rem; align-items: flex-end; }
   .edit-toolbar.show { display: flex; }
   .edit-fab { font-family: var(--font-body); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.7rem 1.4rem; background: var(--accent); color: var(--bg); border: none; cursor: pointer; border-radius: 2px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: all 0.25s; }
@@ -136,8 +122,6 @@
   .edit-fab.secondary:hover { color: var(--text); border-color: var(--muted); }
   .edit-fab.danger { background: transparent; color: rgba(255,100,100,0.7); border: 1px solid rgba(255,100,100,0.25); box-shadow: none; }
   .edit-fab.danger:hover { background: rgba(255,100,100,0.08); }
-
-  /* MODAL */
   .modal-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(8,8,8,0.92); display: none; align-items: center; justify-content: center; }
   .modal-overlay.open { display: flex; }
   .modal { background: var(--bg2); border: 1px solid var(--border); padding: 2.5rem; width: 90%; max-width: 520px; border-radius: 4px; }
@@ -159,18 +143,14 @@
   .modal-error { font-size: 0.78rem; color: rgba(255,100,100,0.8); margin-top: 0.3rem; display: none; }
   .modal-error.show { display: block; }
   .otp-hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; font-style: italic; }
-
-  /* TOAST */
   .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%); background: var(--bg3); border: 1px solid var(--border); color: var(--text); padding: 0.8rem 2rem; font-size: 0.8rem; letter-spacing: 0.08em; border-radius: 2px; z-index: 300; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
   .toast.show { opacity: 1; }
-
   @media (max-width: 900px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { gap: 1.5rem; }
     section { padding: 5rem 1.5rem; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .gallery-item.wide { grid-column: span 2; }
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .services-grid { grid-template-columns: 1fr; }
     .service-card { border-right: none; border-bottom: 1px solid var(--border); }
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -178,8 +158,8 @@
     footer { flex-direction: column; gap: 1rem; text-align: center; }
   }
 </style>
-<style type="text/css">:root img[width="728"][height="90"], :root [href="https://adstub.net/cina777/"], :root [href="https://adstub.net/arab777/"], :root [href="https://adstub.net/ratu89/"], :root [href="https://adstub.net/judi89/"], :root [href^="//mage98rquewz.com/"], :root [href^="//x4pollyxxpush.com/"], :root span[id^="ezoic-pub-ad-placeholder-"], :root ins.adsbygoogle[data-ad-slot], :root ins.adsbygoogle[data-ad-client], :root img[src^="https://s-img.adskeeper.com/"], :root guj-ad, :root gpt-ad, :root div[ow-ad-unit-wrapper], :root div[id^="zergnet-widget"], :root div[id^="vuukle-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="st"][style^="z-index: 999999999;"], :root div[id^="rc-widget-"], :root div[id^="mrec-leaderboard-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dfp-ad-"], :root div[id^="crt-"][style], :root div[id^="adspot-"], :root ps-connatix-module, :root div[id^="ad_position_"], :root div[id^="ad-div-"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root [href="https://adstub.net/rusia777/"], :root div[data-id-advertdfpconf], :root div[data-dfp-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-alias="300x250 Ad 2"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-adname], :root div[data-ad-targeting], :root div[data-ad-region], :root div[data-ad-placeholder], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root div[id^="google_dfp_"], :root ad-slot, :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root amp-ad, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://lnkxt.bannerator.com/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root [href^="https://groorsoa.net/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.effectiveratecpm.com/"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://www.dql2clk.com/"], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.dating-finder.com/signup/?ai_d="], :root a[href^="https://wolf-327b.com/"], :root a[href^="https://voluum.prom-xcams.com/"], :root a[href^="https://twinrdsyte.com/"], :root .category-ads:not(html):not(body):not(.post), :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root [data-identity="adhesive-ad"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://tatrck.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"], :root a[href^="https://t.ajump1.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root div[data-alias="300x250 Ad 1"], :root a[href^="https://syndicate.contentsserved.com/"], :root a[href^="https://svb-analytics.trackerrr.com/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"] + .ob_source, :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root a[href^="https://stardomcoit.com/"], :root a[href^="https://track.aftrk5.com/"], :root a[href^="https://slkmis.com/"], :root a[href^="https://myclick-2.com/"], :root a[href^="https://sexynearme.com/"], :root a[href^="https://s.zlinkt.com/"], :root [data-ad-manager-id], :root a[href^="https://s.zlinkr.com/"], :root bottomadblock, :root a[href^="https://s.zlinkd.com/"], :root [href="https://adstub.net/gaza88/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://s.zlink7.com/"], :root a[href^="https://s.ma3ion.com/"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://s.gentlefieldpattern.com/"], :root a[href^="https://s.eunow4u.com/"], :root a[href^="https://random-affiliate.atimaze.com/"], :root #kt_player > div[style$="display: block;"][style*="inset: 0px;"], :root [href$="/sexdating.php"], :root a[href^="https://quotationfirearmrevision.com/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://www.dating-finder.com/?ai_d="], :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root app-ad, :root [href^="https://ap.octopuspop.com/click/"] > img, :root a[href^="https://postback1win.com/"], :root a[href^="https://a.adtng.com/"], :root a[href^="https://playnano.online/offerwalls/?ref="], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://pb-front.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://streamate.com/landing/click/"], :root div[class^="Adstyled__AdWrapper-"], :root a[href^="https://osfultrbriolenai.info/"], :root a[href^="https://upsups.click/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [data-ad-name], :root a[href^="https://loboclick.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://join.bannedsextapes.com/track/"], :root a[href^="https://jaxofuna.com/"], :root a[href^="https://italarizege.xyz/"], :root .category-ad:not(html):not(body):not(.post), :root a[href^="https://s.happyleafmotion.com/"], :root a[href^="https://identicaldrench.com/"], :root a[href^="https://helmethomicidal.com/"], :root a[href^="https://golinks.work/"], :root a[href^="https://go.xxxjmp.com"], :root a[href^="https://zirdough.net/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root [data-role="tile-ads-module"], :root a[href^="https://go.xlviirdr.com"], :root div[class$="-adlabel"], :root a[href^="https://go.xlviiirdr.com"], :root a[href^="https://go.xlivrdr.com"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://lijavaxa.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://www.bang.com/?aff="], :root #mgb-container > #mgb, :root a[href^="https://go.admjmp.com"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://datewhisper.life/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root a[href^="https://get-link.xyz/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://clicks.affstrack.com/"] > img, :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://dl-protect.net/"], :root a[href*=".foxqck.com/"], :root a[href^="https://ctosrd.com/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root app-advertisement, :root a[href^="https://getmatchedlocally.com/"], :root a[href^="https://clickins.slixa.com/"], :root a[href^="https://combodef.com/"], :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root a[href^="https://ctrdwm.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://click.Ggpickaff.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[onclick^="window.location.replace('https://random-affiliate.atimaze.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://t.ajrkm1.com/"], :root a[href^="https://bongacams10.com/track?"], :root a[href^="//hoodingluster.com/"], :root a[href^="https://black77854.com/"], :root a[href^="https://rixofa.com/"], :root a[href^="https://best-experience-cool.com/"], :root [data-taboola-options], :root a[href^="https://believessway.com/"], :root a[href^="https://Click.ggpickaff.com/"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="http://revolvemockerycopper.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ausoafab.net/"], :root a[href^="https://aj1070.online/"], :root a[href^="https://ads.planetwin365affiliate.com/"], :root a[href^="https://ads.leovegas.com/"], :root a[href^="https://a.medfoodhome.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://a.candyai.love/"], :root .banner-img > .pbl, :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [data-testid^="section-AdRowBillboard"], :root .ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox), :root broadstreet-zone-container, :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://1winpb.com/"], :root a[href^="https://chaturbate.com/in/?"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href*="&maxads="], :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="https://1betandgonow.com/"], :root div[id^="optidigital-adslot"], :root [href^="https://wsup.ai/"], :root a[href^="https://123-stream.org/"], :root a[href^="https://in.rabbtrk.com/"], :root a[href^="http://www.h4trck.com/"], :root [href^="https://a.acebet.com/api/click?"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://partners.etoro.com/"], :root [href="https://chaturbate.jjgirls.com/"] > img, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root amp-ad-custom, :root a[href^="http://trk.globwo.online/"], :root a-ad, :root a[href^="https://offhandpump.com/"], :root a[href^="http://stickingrepute.com/"], :root #slashboxes > .deals-rail, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="//startgaming.net/tienda/" i], :root a[href^="https://a.medfoodsafety.com/"], :root a[href^="//go.eabids.com/"], :root a[href^=" https://www.friendlyduck.com/AF_"], :root [data-cl-spot-id], :root a[href*="/jump/next.php?r="], :root a[href^="https://go.nordvpn.net/aff"] > img, :root .\[\&_\.gdprAdTransparencyCogWheelButton\]\:\!pjra-z-\[5\], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [href^="https://www.profitablegatecpm.com/"], :root a[href*=".cfm?domain="][href*="&fp="], :root [id^="section-ad-banner"], :root [id^="ad_slider"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://wmctjd.com/"], :root a[href*="//jjgirls.com/sex/Chaturbate"], :root [id^="ad-wrap-"], :root a[href^="http://sarcasmadvisor.com/"], :root #adframe:not(frameset), :root [href^="https://www.restoro.com/"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://www.hostg.xyz/"] > img, :root a[href^="https://bngpt.com/"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root a[href^="https://s.zlink3.com/"], :root a[href^="http://sneakyadministration.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root citrus-ad-wrapper, :root a[href^="https://go.grinsbest.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="https://t.acam.link/"], :root a[href^="https://go.strpjmp.com/"], :root [href^="https://url.totaladblock.com/"], :root div[id^="ad-position-"], :root a[href^="https://www.toprevenuegate.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://bngprm.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root [href^="https://wct.link/click?"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root a[href^="https://iqbroker.com/"][href*="?aff="], :root .p-post-ad:not(html):not(body), :root [href^="https://rpwmct.com/"], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://mylead.global/stl/"] > img, :root [data-testid="adBanner-wrapper"], :root [href^="https://optimizedelite.com/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root a[href^="https://go.bbrdbr.com"], :root a[href^="https://fc.lc/ref/"], :root a[href^="https://pb-imc.com/"], :root a[href^="https://www8.smartadserver.com/"], :root topadblock, :root a[href^="//s.zlinkd.com/"], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root a[href^="https://go.rmishe.com/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://explore-site.com/"], :root .AdBody:not(body), :root [href="https://adstub.net/indo666/"], :root [href^="https://glersakr.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://go.bushheel.com/"], :root a[href^="https://ctjdwm.com/"], :root a[href^="https://camfapr.com/landing/click/"], :root div[data-ad-wrapper], :root .gnt_em_vp_c[data-g-s="vp_dk"], :root [href="//sexcams.plus/"], :root [href^="http://www.mypillow.com/"] > img, :root a[href^="https://join.virtualtaboo.com/track/"], :root [id^="ad_sky"], :root [name^="google_ads_iframe"], :root a[href^="https://www.liquidfire.mobi/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root a[href^="http://join.brokestraightboys.com/track/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root a[href^="https://track.aftrk3.com/"], :root [href^="https://join3.bannedsextapes.com"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="https://activate-game.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [data-wpas-zoneid], :root [data-type="ad-vertical"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://s.cant3am.com/"], :root [data-testid^="taboola-"], :root a[href^="https://track.1234sd123.com/"], :root zeus-ad, :root [data-testid="prism-ad-wrapper"], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href*=".adsrv.eacdn.com/"], :root #teaser1[style^="width:autopx;"], :root [href^="https://www.cloudways.com/en/?id"], :root #modal[doskip][prclck], :root a[href^="https://t.ajrkm3.com/"], :root in-page-message[doskip], :root [href^="https://aads.com/campaigns/"], :root a[href^="https://juicyads.in/"], :root div[id^="apn_native_ad_slot_"], :root .adhesion:not(body), :root a[href^="https://bodelen.com/"], :root a[href*=".g2afse.com/"], :root a[href^="https://go.hpyjmp.com"], :root iframe[scrolling="no"][sandbox*="allow-popups allow-modals"][style^="width: 100%; height: 100%; border: none;"], :root [href^="https://mystore.com/"] > img, :root span[data-ez-ph-id], :root [href^="https://track.aftrk1.com/"], :root div[id^="adngin-"], :root [data-rc-widget], :root a[href^="https://stellarcashflow.net/trck/"], :root [data-mobile-ad-id], :root [href^="https://join.playboyplus.com/track/"], :root a[href^="https://gamingadlt.com/?offer="], :root a[href^="https://adclick.g.doubleclick.net/"], :root [data-freestar-ad][id], :root [data-dynamic-ads], :root [data-desktop-ad-id], :root a[href^="https://go.rmhfrtnd.com"], :root [data-asg-ins], :root [data-block-type="ad"], :root [data-ad-width], :root [onclick*="content.ad/"], :root a[href^="https://snowdayonline.xyz/"], :root a[href^="https://join.dreamsexworld.com/"], :root AMP-AD, :root [data-ad-cls], :root .ad-box:not(#ad-banner):not(:empty), :root [data-ez-name], :root a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"], :root [id^="div-gpt-ad"], :root .ob_container .item-container-obpd, :root #ads_top:not(a), :root a[href^="https://go.mnaspm.com/"], :root a[href^="https://service.bv-aff-trx.com/"], :root a[href^="https://6-partner.com/"], :root [class^="s2nPlayer"], :root a[href^="https://traffdaq.com/"], :root [data-testid="ad_testID"], :root [href^="https://ad.admitad.com/"], :root [href^="https://mypillow.com/"] > img, :root [data-testid="commercial-label-taboola"], :root [class^="div-gpt-ad"], :root a[href^="http://tc.tradetracker.net/"] > img, :root [class^="amp-ad-"], :root AD-SLOT, :root a[href^="https://www.googleadservices.com/pagead/aclk?"] > img, :root [data-ad-module], :root a[href^="https://a.bestcontentfood.top/"], :root #kt_player > a[target="_blank"], :root [href^="https://zone.gotrackier.com/"], :root .ad-area:not(.text-ad), :root a[href^="https://ab.advertiserurl.com/aff/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root .sidebar-ad:not(.adsbygoogle), :root a[href^="https://s.zlinkn.com/"], :root a[href^="https://go.xxxvjmp.com/"], :root .ads_container:not(.text-ad), :root [class^="adDisplay-module"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root ad-shield-ads, :root a[href^="https://hot-growngames.life/"], :root .ad_box:not(.text-ad), :root [href="https://jdrucker.com/gold"] > img, :root .ad-wrap:not(#google_ads_iframe_checktag), :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="https://ad1.adfarm1.adition.com/"], :root #teaser3[style^="width:autopx;"], :root div[id^="div-gpt-"], :root a[href^="https://gml-grp.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[href^="https://wittered-mainging.com/"], :root #teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"], :root [data-revive-zoneid], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root #teaser2[style^="width:autopx;"], :root a[href^="https://losingoldfry.com/"], :root div[id^="adrotate_widgets-"], :root .Ad-Container:not(.adsbygoogle) { display: none !important; }</style><style></style><style type="text/css">:root img[width="728"][height="90"], :root [href="https://adstub.net/cina777/"], :root [href="https://adstub.net/arab777/"], :root [href="https://adstub.net/ratu89/"], :root [href="https://adstub.net/judi89/"], :root [href^="//mage98rquewz.com/"], :root [href^="//x4pollyxxpush.com/"], :root span[id^="ezoic-pub-ad-placeholder-"], :root ins.adsbygoogle[data-ad-slot], :root ins.adsbygoogle[data-ad-client], :root img[src^="https://s-img.adskeeper.com/"], :root guj-ad, :root gpt-ad, :root div[ow-ad-unit-wrapper], :root div[id^="zergnet-widget"], :root div[id^="vuukle-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="st"][style^="z-index: 999999999;"], :root div[id^="rc-widget-"], :root div[id^="mrec-leaderboard-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dfp-ad-"], :root div[id^="crt-"][style], :root div[id^="adspot-"], :root ps-connatix-module, :root div[id^="ad_position_"], :root div[id^="ad-div-"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root [href="https://adstub.net/rusia777/"], :root div[data-id-advertdfpconf], :root div[data-dfp-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-alias="300x250 Ad 2"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-adname], :root div[data-ad-targeting], :root div[data-ad-region], :root div[data-ad-placeholder], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root div[id^="google_dfp_"], :root ad-slot, :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root amp-ad, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://lnkxt.bannerator.com/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root [href^="https://groorsoa.net/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.effectiveratecpm.com/"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://www.dql2clk.com/"], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.dating-finder.com/signup/?ai_d="], :root a[href^="https://wolf-327b.com/"], :root a[href^="https://voluum.prom-xcams.com/"], :root a[href^="https://twinrdsyte.com/"], :root .category-ads:not(html):not(body):not(.post), :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="https://torguard.net/aff.php"] > img, :root [data-identity="adhesive-ad"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://tatrck.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"], :root a[href^="https://t.ajump1.com/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root div[data-alias="300x250 Ad 1"], :root a[href^="https://syndicate.contentsserved.com/"], :root a[href^="https://svb-analytics.trackerrr.com/"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"] + .ob_source, :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root a[href^="https://stardomcoit.com/"], :root a[href^="https://track.aftrk5.com/"], :root a[href^="https://slkmis.com/"], :root a[href^="https://myclick-2.com/"], :root a[href^="https://sexynearme.com/"], :root a[href^="https://s.zlinkt.com/"], :root [data-ad-manager-id], :root a[href^="https://s.zlinkr.com/"], :root bottomadblock, :root a[href^="https://s.zlinkd.com/"], :root [href="https://adstub.net/gaza88/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://s.zlink7.com/"], :root a[href^="https://s.ma3ion.com/"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://s.gentlefieldpattern.com/"], :root a[href^="https://s.eunow4u.com/"], :root a[href^="https://random-affiliate.atimaze.com/"], :root #kt_player > div[style$="display: block;"][style*="inset: 0px;"], :root [href$="/sexdating.php"], :root a[href^="https://quotationfirearmrevision.com/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://www.dating-finder.com/?ai_d="], :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root app-ad, :root [href^="https://ap.octopuspop.com/click/"] > img, :root a[href^="https://postback1win.com/"], :root a[href^="https://a.adtng.com/"], :root a[href^="https://playnano.online/offerwalls/?ref="], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://pb-front.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://streamate.com/landing/click/"], :root div[class^="Adstyled__AdWrapper-"], :root a[href^="https://osfultrbriolenai.info/"], :root a[href^="https://upsups.click/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [data-ad-name], :root a[href^="https://loboclick.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://join.bannedsextapes.com/track/"], :root a[href^="https://jaxofuna.com/"], :root a[href^="https://italarizege.xyz/"], :root .category-ad:not(html):not(body):not(.post), :root a[href^="https://s.happyleafmotion.com/"], :root a[href^="https://identicaldrench.com/"], :root a[href^="https://helmethomicidal.com/"], :root a[href^="https://golinks.work/"], :root a[href^="https://go.xxxjmp.com"], :root a[href^="https://zirdough.net/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root [data-role="tile-ads-module"], :root a[href^="https://go.xlviirdr.com"], :root div[class$="-adlabel"], :root a[href^="https://go.xlviiirdr.com"], :root a[href^="https://go.xlivrdr.com"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://lijavaxa.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://www.bang.com/?aff="], :root #mgb-container > #mgb, :root a[href^="https://go.admjmp.com"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://datewhisper.life/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root a[href^="https://get-link.xyz/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://clicks.affstrack.com/"] > img, :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://dl-protect.net/"], :root a[href*=".foxqck.com/"], :root a[href^="https://ctosrd.com/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root app-advertisement, :root a[href^="https://getmatchedlocally.com/"], :root a[href^="https://clickins.slixa.com/"], :root a[href^="https://combodef.com/"], :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root a[href^="https://ctrdwm.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://click.Ggpickaff.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[onclick^="window.location.replace('https://random-affiliate.atimaze.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://t.ajrkm1.com/"], :root a[href^="https://bongacams10.com/track?"], :root a[href^="//hoodingluster.com/"], :root a[href^="https://black77854.com/"], :root a[href^="https://rixofa.com/"], :root a[href^="https://best-experience-cool.com/"], :root [data-taboola-options], :root a[href^="https://believessway.com/"], :root a[href^="https://Click.ggpickaff.com/"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="http://revolvemockerycopper.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://ausoafab.net/"], :root a[href^="https://aj1070.online/"], :root a[href^="https://ads.planetwin365affiliate.com/"], :root a[href^="https://ads.leovegas.com/"], :root a[href^="https://a.medfoodhome.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://a.candyai.love/"], :root .banner-img > .pbl, :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root [data-testid^="section-AdRowBillboard"], :root .ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox), :root broadstreet-zone-container, :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://1winpb.com/"], :root a[href^="https://chaturbate.com/in/?"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href*="&maxads="], :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="https://1betandgonow.com/"], :root div[id^="optidigital-adslot"], :root [href^="https://wsup.ai/"], :root a[href^="https://123-stream.org/"], :root a[href^="https://in.rabbtrk.com/"], :root a[href^="http://www.h4trck.com/"], :root [href^="https://a.acebet.com/api/click?"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://partners.etoro.com/"], :root [href="https://chaturbate.jjgirls.com/"] > img, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root amp-ad-custom, :root a[href^="http://trk.globwo.online/"], :root a-ad, :root a[href^="https://offhandpump.com/"], :root a[href^="http://stickingrepute.com/"], :root #slashboxes > .deals-rail, :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="//startgaming.net/tienda/" i], :root a[href^="https://a.medfoodsafety.com/"], :root a[href^="//go.eabids.com/"], :root a[href^=" https://www.friendlyduck.com/AF_"], :root [data-cl-spot-id], :root a[href*="/jump/next.php?r="], :root a[href^="https://go.nordvpn.net/aff"] > img, :root .\[\&_\.gdprAdTransparencyCogWheelButton\]\:\!pjra-z-\[5\], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [href^="https://www.profitablegatecpm.com/"], :root a[href*=".cfm?domain="][href*="&fp="], :root [id^="section-ad-banner"], :root [id^="ad_slider"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://wmctjd.com/"], :root a[href*="//jjgirls.com/sex/Chaturbate"], :root [id^="ad-wrap-"], :root a[href^="http://sarcasmadvisor.com/"], :root #adframe:not(frameset), :root [href^="https://www.restoro.com/"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://www.hostg.xyz/"] > img, :root a[href^="https://bngpt.com/"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root a[href^="https://s.zlink3.com/"], :root a[href^="http://sneakyadministration.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root citrus-ad-wrapper, :root a[href^="https://go.grinsbest.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="https://t.acam.link/"], :root a[href^="https://go.strpjmp.com/"], :root [href^="https://url.totaladblock.com/"], :root div[id^="ad-position-"], :root a[href^="https://www.toprevenuegate.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://bngprm.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root [href^="https://wct.link/click?"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root a[href^="https://iqbroker.com/"][href*="?aff="], :root .p-post-ad:not(html):not(body), :root [href^="https://rpwmct.com/"], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://mylead.global/stl/"] > img, :root [data-testid="adBanner-wrapper"], :root [href^="https://optimizedelite.com/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root a[href^="https://go.bbrdbr.com"], :root a[href^="https://fc.lc/ref/"], :root a[href^="https://pb-imc.com/"], :root a[href^="https://www8.smartadserver.com/"], :root topadblock, :root a[href^="//s.zlinkd.com/"], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root a[href^="https://go.rmishe.com/"], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://explore-site.com/"], :root .AdBody:not(body), :root [href="https://adstub.net/indo666/"], :root [href^="https://glersakr.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://go.bushheel.com/"], :root a[href^="https://ctjdwm.com/"], :root a[href^="https://camfapr.com/landing/click/"], :root div[data-ad-wrapper], :root .gnt_em_vp_c[data-g-s="vp_dk"], :root [href="//sexcams.plus/"], :root [href^="http://www.mypillow.com/"] > img, :root a[href^="https://join.virtualtaboo.com/track/"], :root [id^="ad_sky"], :root [name^="google_ads_iframe"], :root a[href^="https://www.liquidfire.mobi/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root a[href^="http://join.brokestraightboys.com/track/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root a[href^="https://track.aftrk3.com/"], :root [href^="https://join3.bannedsextapes.com"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="https://activate-game.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [data-wpas-zoneid], :root [data-type="ad-vertical"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://s.cant3am.com/"], :root [data-testid^="taboola-"], :root a[href^="https://track.1234sd123.com/"], :root zeus-ad, :root [data-testid="prism-ad-wrapper"], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href*=".adsrv.eacdn.com/"], :root #teaser1[style^="width:autopx;"], :root [href^="https://www.cloudways.com/en/?id"], :root #modal[doskip][prclck], :root a[href^="https://t.ajrkm3.com/"], :root in-page-message[doskip], :root [href^="https://aads.com/campaigns/"], :root a[href^="https://juicyads.in/"], :root div[id^="apn_native_ad_slot_"], :root .adhesion:not(body), :root a[href^="https://bodelen.com/"], :root a[href*=".g2afse.com/"], :root a[href^="https://go.hpyjmp.com"], :root iframe[scrolling="no"][sandbox*="allow-popups allow-modals"][style^="width: 100%; height: 100%; border: none;"], :root [href^="https://mystore.com/"] > img, :root span[data-ez-ph-id], :root [href^="https://track.aftrk1.com/"], :root div[id^="adngin-"], :root [data-rc-widget], :root a[href^="https://stellarcashflow.net/trck/"], :root [data-mobile-ad-id], :root [href^="https://join.playboyplus.com/track/"], :root a[href^="https://gamingadlt.com/?offer="], :root a[href^="https://adclick.g.doubleclick.net/"], :root [data-freestar-ad][id], :root [data-dynamic-ads], :root [data-desktop-ad-id], :root a[href^="https://go.rmhfrtnd.com"], :root [data-asg-ins], :root [data-block-type="ad"], :root [data-ad-width], :root [onclick*="content.ad/"], :root a[href^="https://snowdayonline.xyz/"], :root a[href^="https://join.dreamsexworld.com/"], :root AMP-AD, :root [data-ad-cls], :root .ad-box:not(#ad-banner):not(:empty), :root [data-ez-name], :root a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"], :root [id^="div-gpt-ad"], :root .ob_container .item-container-obpd, :root #ads_top:not(a), :root a[href^="https://go.mnaspm.com/"], :root a[href^="https://service.bv-aff-trx.com/"], :root a[href^="https://6-partner.com/"], :root [class^="s2nPlayer"], :root a[href^="https://traffdaq.com/"], :root [data-testid="ad_testID"], :root [href^="https://ad.admitad.com/"], :root [href^="https://mypillow.com/"] > img, :root [data-testid="commercial-label-taboola"], :root [class^="div-gpt-ad"], :root a[href^="http://tc.tradetracker.net/"] > img, :root [class^="amp-ad-"], :root AD-SLOT, :root a[href^="https://www.googleadservices.com/pagead/aclk?"] > img, :root [data-ad-module], :root a[href^="https://a.bestcontentfood.top/"], :root #kt_player > a[target="_blank"], :root [href^="https://zone.gotrackier.com/"], :root .ad-area:not(.text-ad), :root a[href^="https://ab.advertiserurl.com/aff/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root .sidebar-ad:not(.adsbygoogle), :root a[href^="https://s.zlinkn.com/"], :root a[href^="https://go.xxxvjmp.com/"], :root .ads_container:not(.text-ad), :root [class^="adDisplay-module"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root ad-shield-ads, :root a[href^="https://hot-growngames.life/"], :root .ad_box:not(.text-ad), :root [href="https://jdrucker.com/gold"] > img, :root .ad-wrap:not(#google_ads_iframe_checktag), :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="https://ad1.adfarm1.adition.com/"], :root #teaser3[style^="width:autopx;"], :root div[id^="div-gpt-"], :root a[href^="https://gml-grp.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root a[href^="https://wittered-mainging.com/"], :root #teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"], :root [data-revive-zoneid], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root #teaser2[style^="width:autopx;"], :root a[href^="https://losingoldfry.com/"], :root div[id^="adrotate_widgets-"], :root .Ad-Container:not(.adsbygoogle) { display: none !important; }</style><style></style></head>
-<body data-new-gr-c-s-check-loaded="14.1302.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1302.0">
+</head>
+<body>
 
 <nav>
   <a href="#hero" class="nav-logo">Connor Chong</a>
@@ -192,7 +172,7 @@
 </nav>
 
 <section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Photography &amp; Visual Storytelling</p>
     <h1 class="hero-title">Connor<br><em>Chong</em></h1>
@@ -217,91 +197,7 @@
       <button class="filter-btn" data-filter="street">Street</button>
     </div>
   </div>
-  <div class="gallery-grid" id="galleryGrid"><div class="gallery-item" data-index="0">
-      <img src="https://i.imgur.com/kxyImis.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">street</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="1">Edit</button></div><div class="gallery-item" data-index="1">
-      <img src="https://i.imgur.com/Lq7CCiI.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="2">Edit</button></div><div class="gallery-item wide" data-index="2">
-      <img src="https://i.imgur.com/ywk65Nr.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="3">Edit</button></div><div class="gallery-item" data-index="3">
-      <img src="https://i.imgur.com/gIvswnY.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="4">Edit</button></div><div class="gallery-item" data-index="4">
-      <img src="https://i.imgur.com/nq7mGpD.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">street</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="5">Edit</button></div><div class="gallery-item" data-index="5">
-      <img src="https://i.imgur.com/2bjmXtr.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="6">Edit</button></div><div class="gallery-item" data-index="6">
-      <img src="https://i.imgur.com/i87GKwB.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">street</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="7">Edit</button></div><div class="gallery-item wide" data-index="7">
-      <img src="https://i.imgur.com/mL106rX.jpeg" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">street</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="8">Edit</button></div><div class="gallery-item wide" data-index="8">
-      <img src="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7479%20-%2000000001-2.jpg?raw=true" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="9">Edit</button></div><div class="gallery-item wide" data-index="9">
-      <img src="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC2794.jpg?raw=true" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="10">Edit</button></div><div class="gallery-item wide" data-index="10">
-      <img src="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC6401.jpg?raw=true" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="11">Edit</button></div><div class="gallery-item" data-index="11">
-      <img src="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC6384.jpg?raw=true" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">pets</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="12">Edit</button></div><div class="gallery-item wide" data-index="12">
-      <img src="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/Still%202026-06-11%20215348_1.1.1.jpg?raw=true" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">portrait</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="13">Edit</button></div><div class="gallery-item wide" data-index="13">
-      <img src="https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7585%20-%2000000001.jpg?raw=true" alt="." loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">family</div>
-        <div class="gallery-item-title">.</div>
-      </div>
-      <button class="gallery-edit-btn" data-id="14">Edit</button></div><button class="add-photo-btn"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>Add Photo</span></button></div>
+  <div class="gallery-grid" id="galleryGrid"></div>
 </section>
 
 <section id="about">
@@ -311,10 +207,11 @@
       <h2 class="section-title">The Eye<br><em>Behind the Lens</em></h2>
       <div class="divider"></div>
       <p id="aboutP1">I'm Connor Chong, a Las Vegas photographer specializing in pet photography, family photos, and portraits. My focus is creating natural, high-quality images that capture genuine personality and connection.</p>
-      <p id="aboutP2">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just <p id="aboutP2"> per photo.</p><p id="aboutP2">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just <p id="aboutP2"> per photo.</p>
-      <p id="aboutP3">Whether you're celebrating your family, your pet, or yourself, I'm committed to delivering images that stand out and last a lifetime.</p>
+      <p id="aboutP2">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just $1 per photo, and I also offer printed and framed photographs so your favorite memories can become lasting artwork.</p>
+      <p id="aboutP3">Whether you're celebrating your family, your pet, or yourself, I'm committed to delivering images that stand out and last a lifetime. Let's create something unforgettable.</p>
+    </div>
   </div>
-</div></section>
+</section>
 
 <section id="services">
   <div class="services-inner">
@@ -366,10 +263,10 @@
     <div>
       <form class="contact-form" id="contactForm">
         <div class="form-row">
-          <div class="form-field"><label>First Name</label><input type="text" name="first_name" placeholder="Alex" required=""></div>
+          <div class="form-field"><label>First Name</label><input type="text" name="first_name" placeholder="Alex" required></div>
           <div class="form-field"><label>Last Name</label><input type="text" name="last_name" placeholder="Rivera"></div>
         </div>
-        <div class="form-field"><label>Email Address</label><input type="email" name="email" placeholder="alex@example.com" required=""></div>
+        <div class="form-field"><label>Email Address</label><input type="email" name="email" placeholder="alex@example.com" required></div>
         <div class="form-field">
           <label>Project Type</label>
           <select name="project_type">
@@ -381,7 +278,7 @@
             <option>Other</option>
           </select>
         </div>
-        <div class="form-field"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required=""></textarea></div>
+        <div class="form-field"><label>Message</label><textarea name="message" placeholder="Tell me about your project..." required></textarea></div>
         <button type="submit" class="submit-btn" id="contactSubmitBtn">Send Message</button>
         <div class="form-success" id="formSuccess">Thank you — I'll be in touch soon.</div>
       </form>
@@ -394,7 +291,6 @@
   <span class="footer-logo" id="footerLogo">Connor Chong</span>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">×</button>
   <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
@@ -402,11 +298,9 @@
   <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
 </div>
 
-<!-- DEV BADGE -->
-<div class="dev-badge show" id="devBadge">Dev Mode</div>
+<div class="dev-badge" id="devBadge">Dev Mode</div>
 
-<!-- EDIT TOOLBAR -->
-<div class="edit-toolbar show" id="editToolbar">
+<div class="edit-toolbar" id="editToolbar">
   <button class="edit-fab" id="addPhotoBtn">+ Add Photo</button>
   <button class="edit-fab secondary" id="editInfoBtn">Edit Info</button>
   <button class="edit-fab secondary" id="editAboutBtn">Edit About</button>
@@ -414,32 +308,26 @@
   <button class="edit-fab danger" id="lockBtn">Lock Dev Mode</button>
 </div>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="editModal">
   <div class="modal">
-    <h3 id="modalTitle">Edit About Text</h3>
-    <p class="modal-sub" id="modalSub">Update your bio paragraphs.</p>
-    <div id="modalBody">
-    <div class="modal-field"><label>Paragraph 1</label><textarea id="a_p1" style="height:80px">I'm Connor Chong, a Las Vegas photographer specializing in pet photography, family photos, and portraits. My focus is creating natural, high-quality images that capture genuine personality and connection.</textarea></div>
-    <div class="modal-field"><label>Paragraph 2</label><textarea id="a_p2" style="height:80px">Every session is approached with care and attention to detail, ensuring you receive photos you'll be proud to share and display. Professional photo editing is available for just $1 per photo.</textarea></div>
-    <div class="modal-field"><label>Paragraph 3</label><textarea id="a_p3" style="height:80px">Whether you're celebrating your family, your pet, or yourself, I'm committed to delivering images that stand out and last a lifetime.</textarea></div>
-  </div>
+    <h3 id="modalTitle">Edit</h3>
+    <p class="modal-sub" id="modalSub"></p>
+    <div id="modalBody"></div>
     <div class="modal-actions">
-      <button class="modal-btn primary" id="modalSave">Save Changes</button>
+      <button class="modal-btn primary" id="modalSave">Save</button>
       <button class="modal-btn secondary" id="modalCancel">Cancel</button>
     </div>
   </div>
 </div>
 
-<!-- DEV LOGIN MODAL -->
 <div class="modal-overlay" id="devModal">
   <div class="modal">
     <h3>Developer Access</h3>
-    <p class="modal-sub" id="devModalSub">Enter the one-time code sent to your email.</p>
+    <p class="modal-sub">Enter the one-time code sent to your email.</p>
     <div id="devModalBody">
       <div id="devStep1">
         <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.7;">Click below to send a one-time 6-digit code to <strong style="color:var(--text)">connorchongbusiness@gmail.com</strong>. The code expires in 10 minutes.</p>
-        <button class="modal-btn primary" id="sendOtpBtn">Sending...</button>
+        <button class="modal-btn primary" id="sendOtpBtn">Send Code to My Email</button>
         <p class="modal-error" id="sendOtpError"></p>
       </div>
       <div id="devStep2" style="display:none;">
@@ -451,48 +339,57 @@
         <p class="otp-hint">Code sent to connorchongbusiness@gmail.com · expires in 10 minutes</p>
       </div>
     </div>
-    <div class="modal-actions" id="devModalActions">
+    <div class="modal-actions">
       <button class="modal-btn primary" id="devModalBtn" style="display:none;">Verify Code</button>
       <button class="modal-btn secondary" id="devModalCancel">Cancel</button>
     </div>
   </div>
 </div>
 
-<div class="toast show" id="toast">About text updated</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const FORMSPREE = 'https://formspree.io/f/xjgdvonb';
 
-// ── PHOTOS DATA ──
-let photos = [{"id":1,"src":"https://i.imgur.com/kxyImis.jpeg","title":".","category":"street","wide":false},{"id":2,"src":"https://i.imgur.com/Lq7CCiI.jpeg","title":".","category":"pets","wide":false},{"id":3,"src":"https://i.imgur.com/ywk65Nr.jpeg","title":".","category":"pets","wide":true},{"id":4,"src":"https://i.imgur.com/gIvswnY.jpeg","title":".","category":"pets","wide":false},{"id":5,"src":"https://i.imgur.com/nq7mGpD.jpeg","title":".","category":"street","wide":false},{"id":6,"src":"https://i.imgur.com/2bjmXtr.jpeg","title":".","category":"pets","wide":false},{"id":7,"src":"https://i.imgur.com/i87GKwB.jpeg","title":".","category":"street","wide":false},{"id":8,"src":"https://i.imgur.com/mL106rX.jpeg","title":".","category":"street","wide":true},{"id":9,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7479%20-%2000000001-2.jpg?raw=true","title":".","category":"pets","wide":true},{"id":10,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC2794.jpg?raw=true","title":".","category":"pets","wide":true},{"id":11,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC6401.jpg?raw=true","title":".","category":"pets","wide":true},{"id":12,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC6384.jpg?raw=true","title":".","category":"pets","wide":false},{"id":13,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/Still%202026-06-11%20215348_1.1.1.jpg?raw=true","title":".","category":"portrait","wide":true},{"id":14,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7585%20-%2000000001.jpg?raw=true","title":".","category":"family","wide":true}];
+let photos = [
+  {"id":1,"src":"https://i.imgur.com/kxyImis.jpeg","title":"","category":"street","wide":false},
+  {"id":2,"src":"https://i.imgur.com/Lq7CCiI.jpeg","title":"","category":"pets","wide":false},
+  {"id":3,"src":"https://i.imgur.com/ywk65Nr.jpeg","title":"","category":"pets","wide":true},
+  {"id":4,"src":"https://i.imgur.com/gIvswnY.jpeg","title":"","category":"pets","wide":false},
+  {"id":5,"src":"https://i.imgur.com/nq7mGpD.jpeg","title":"","category":"street","wide":false},
+  {"id":6,"src":"https://i.imgur.com/2bjmXtr.jpeg","title":"","category":"pets","wide":false},
+  {"id":7,"src":"https://i.imgur.com/i87GKwB.jpeg","title":"","category":"street","wide":false},
+  {"id":8,"src":"https://i.imgur.com/mL106rX.jpeg","title":"","category":"street","wide":true},
+  {"id":9,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7479%20-%2000000001-2.jpg?raw=true","title":"","category":"pets","wide":true},
+  {"id":10,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC2794.jpg?raw=true","title":"","category":"pets","wide":true},
+  {"id":11,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC6401.jpg?raw=true","title":"","category":"pets","wide":true},
+  {"id":12,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC6384.jpg?raw=true","title":"","category":"pets","wide":false},
+  {"id":13,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/Still%202026-06-11%20215348_1.1.1.jpg?raw=true","title":"","category":"portrait","wide":true},
+  {"id":14,"src":"https://github.com/connorchongbusiness-creator/connorchongphotography/blob/main/images/_DSC7585%20-%2000000001.jpg?raw=true","title":"","category":"family","wide":true}
+];
 let nextId = 15;
 let activeFilter = 'all';
 let lightboxIndex = 0;
 let devUnlocked = false;
-
-// ── OTP STATE ──
 let otpCode = null;
 let otpExpiry = null;
 
-// ── DEV MODE: triple-click footer logo ──
 let footerClickCount = 0;
 let footerClickTimer = null;
 document.getElementById('footerLogo').addEventListener('click', () => {
   footerClickCount++;
   clearTimeout(footerClickTimer);
   footerClickTimer = setTimeout(() => { footerClickCount = 0; }, 600);
-  if (footerClickCount >= 3) {
-    footerClickCount = 0;
-    if (!devUnlocked) openDevModal();
-  }
+  if (footerClickCount >= 3) { footerClickCount = 0; if (!devUnlocked) openDevModal(); }
 });
 
-// ── DEV MODAL ──
 function openDevModal() {
   document.getElementById('devStep1').style.display = 'block';
   document.getElementById('devStep2').style.display = 'none';
   document.getElementById('devModalBtn').style.display = 'none';
   document.getElementById('sendOtpBtn').style.display = 'inline-flex';
+  document.getElementById('sendOtpBtn').textContent = 'Send Code to My Email';
+  document.getElementById('sendOtpBtn').disabled = false;
   document.getElementById('sendOtpError').classList.remove('show');
   document.getElementById('otpError').classList.remove('show');
   document.getElementById('otpInput').value = '';
@@ -503,33 +400,24 @@ document.getElementById('devModalCancel').addEventListener('click', () => {
   document.getElementById('devModal').classList.remove('open');
 });
 
-// ── SEND OTP ──
 document.getElementById('sendOtpBtn').addEventListener('click', async () => {
   const btn = document.getElementById('sendOtpBtn');
   btn.textContent = 'Sending...';
   btn.disabled = true;
-
-  // Generate 6-digit OTP
   otpCode = String(Math.floor(100000 + Math.random() * 900000));
-  otpExpiry = Date.now() + 10 * 60 * 1000; // 10 minutes
-
+  otpExpiry = Date.now() + 10 * 60 * 1000;
   try {
     const otpForm = new FormData();
     otpForm.append('_subject', 'Your Portfolio Dev Mode Code');
     otpForm.append('message', 'Your one-time developer access code is: ' + otpCode + '\n\nThis code expires in 10 minutes.\n\nIf you did not request this, ignore this email.');
     otpForm.append('email', 'connorchongbusiness@gmail.com');
     otpForm.append('_replyto', 'connorchongbusiness@gmail.com');
-    const res = await fetch(FORMSPREE, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: otpForm
-    });
+    const res = await fetch(FORMSPREE, { method: 'POST', headers: { 'Accept': 'application/json' }, body: otpForm });
     const data = await res.json();
     if (data.ok || res.ok) {
       document.getElementById('devStep1').style.display = 'none';
       document.getElementById('devStep2').style.display = 'block';
       document.getElementById('devModalBtn').style.display = 'inline-flex';
-      document.getElementById('sendOtpBtn').style.display = 'none';
       document.getElementById('otpInput').focus();
     } else {
       document.getElementById('sendOtpError').textContent = 'Failed to send email. Check your Formspree setup.';
@@ -545,14 +433,12 @@ document.getElementById('sendOtpBtn').addEventListener('click', async () => {
   }
 });
 
-// ── VERIFY OTP ──
 document.getElementById('devModalBtn').addEventListener('click', () => {
   const entered = document.getElementById('otpInput').value.trim();
   const errEl = document.getElementById('otpError');
   if (!otpCode) { errEl.textContent = 'No code was generated. Please restart.'; errEl.classList.add('show'); return; }
   if (Date.now() > otpExpiry) { errEl.textContent = 'Code expired. Close and try again.'; errEl.classList.add('show'); otpCode = null; return; }
   if (entered !== otpCode) { errEl.textContent = 'Incorrect code. Please try again.'; errEl.classList.add('show'); document.getElementById('otpInput').value = ''; document.getElementById('otpInput').focus(); return; }
-  // SUCCESS
   otpCode = null;
   devUnlocked = true;
   document.getElementById('devModal').classList.remove('open');
@@ -562,12 +448,10 @@ document.getElementById('devModalBtn').addEventListener('click', () => {
   renderGallery();
 });
 
-// Enter key on OTP input
 document.getElementById('otpInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('devModalBtn').click();
 });
 
-// ── LOCK DEV MODE ──
 document.getElementById('lockBtn').addEventListener('click', () => {
   devUnlocked = false;
   document.getElementById('devBadge').classList.remove('show');
@@ -576,7 +460,6 @@ document.getElementById('lockBtn').addEventListener('click', () => {
   showToast('Dev mode locked');
 });
 
-// ── GALLERY ──
 function filteredPhotos() {
   return activeFilter === 'all' ? photos : photos.filter(p => p.category === activeFilter);
 }
@@ -590,13 +473,7 @@ function renderGallery() {
     div.className = 'gallery-item' + (photo.wide ? ' wide' : '');
     div.dataset.index = i;
     let editBtn = devUnlocked ? `<button class="gallery-edit-btn" data-id="${photo.id}">Edit</button>` : '';
-    div.innerHTML = `
-      <img src="${photo.src}" alt="${photo.title}" loading="lazy">
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-cat">${photo.category}</div>
-        <div class="gallery-item-title">${photo.title}</div>
-      </div>
-      ${editBtn}`;
+    div.innerHTML = `<img src="${photo.src}" alt="" loading="lazy"><div class="gallery-item-overlay"></div>${editBtn}`;
     div.querySelector('img').addEventListener('click', () => openLightbox(i));
     if (devUnlocked) {
       div.querySelector('.gallery-edit-btn').addEventListener('click', e => { e.stopPropagation(); openEditPhoto(photo.id); });
@@ -612,7 +489,6 @@ function renderGallery() {
   }
 }
 
-// ── FILTERS ──
 document.getElementById('filterBtns').addEventListener('click', e => {
   if (!e.target.matches('.filter-btn')) return;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -621,7 +497,6 @@ document.getElementById('filterBtns').addEventListener('click', e => {
   renderGallery();
 });
 
-// ── LIGHTBOX ──
 function openLightbox(index) {
   lightboxIndex = index;
   const fp = filteredPhotos();
@@ -646,7 +521,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
 });
 
-// ── MODAL ──
 let modalCallback = null;
 function openModal(title, sub, bodyHTML, onSave, saveLabel) {
   document.getElementById('modalTitle').textContent = title;
@@ -657,26 +531,21 @@ function openModal(title, sub, bodyHTML, onSave, saveLabel) {
   document.getElementById('editModal').classList.add('open');
 }
 document.getElementById('modalCancel').addEventListener('click', () => document.getElementById('editModal').classList.remove('open'));
-document.getElementById('modalSave').addEventListener('click', () => {
-  if (modalCallback) modalCallback();
-});
+document.getElementById('modalSave').addEventListener('click', () => { if (modalCallback) modalCallback(); });
 
-// ── ADD PHOTO ──
 function openAddPhoto() {
   openModal('Add Photo', 'Paste a direct image URL (ending in .jpg, .png, .webp)', `
     <div class="modal-field"><label>Image URL</label><input id="m_src" type="url" placeholder="https://example.com/photo.jpg"></div>
-    <div class="modal-field"><label>Title</label><input id="m_title" type="text" placeholder="Photo title"></div>
     <div class="modal-field"><label>Category</label>
       <select id="m_cat"><option value="pets">Pets</option><option value="family">Family</option><option value="portrait">Portrait</option><option value="street">Street</option></select>
     </div>
     <div class="modal-field"><label style="flex-direction:row;display:flex;align-items:center;gap:8px;cursor:pointer;"><input type="checkbox" id="m_wide"> Wide layout (spans 2 columns)</label></div>
   `, () => {
     const src = document.getElementById('m_src').value.trim();
-    const title = document.getElementById('m_title').value.trim() || 'Untitled';
     const cat = document.getElementById('m_cat').value;
     const wide = document.getElementById('m_wide').checked;
     if (!src) { showToast('Please enter an image URL'); return; }
-    photos.push({ id: nextId++, src, title, category: cat, wide });
+    photos.push({ id: nextId++, src, title: '', category: cat, wide });
     document.getElementById('editModal').classList.remove('open');
     renderGallery();
     showToast('Photo added');
@@ -684,13 +553,11 @@ function openAddPhoto() {
 }
 document.getElementById('addPhotoBtn').addEventListener('click', openAddPhoto);
 
-// ── EDIT PHOTO ──
 function openEditPhoto(id) {
   const photo = photos.find(p => p.id === id);
   if (!photo) return;
-  openModal('Edit Photo', 'Update this photo\'s details or remove it.', `
+  openModal('Edit Photo', 'Update this photo or remove it.', `
     <div class="modal-field"><label>Image URL</label><input id="m_src" type="url" value="${photo.src}"></div>
-    <div class="modal-field"><label>Title</label><input id="m_title" type="text" value="${photo.title}"></div>
     <div class="modal-field"><label>Category</label>
       <select id="m_cat">${['pets','family','portrait','street'].map(c=>`<option value="${c}"${photo.category===c?' selected':''}>${c[0].toUpperCase()+c.slice(1)}</option>`).join('')}</select>
     </div>
@@ -698,7 +565,6 @@ function openEditPhoto(id) {
     <div class="modal-field" style="margin-top:0.5rem;"><button onclick="deletePhoto(${id})" style="font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.2rem;background:transparent;border:1px solid rgba(255,100,100,0.3);color:rgba(255,100,100,0.7);cursor:pointer;border-radius:2px;">Remove Photo</button></div>
   `, () => {
     photo.src = document.getElementById('m_src').value.trim() || photo.src;
-    photo.title = document.getElementById('m_title').value.trim() || photo.title;
     photo.category = document.getElementById('m_cat').value;
     photo.wide = document.getElementById('m_wide').checked;
     document.getElementById('editModal').classList.remove('open');
@@ -714,7 +580,6 @@ function deletePhoto(id) {
   showToast('Photo removed');
 }
 
-// ── EDIT CONTACT INFO ──
 document.getElementById('editInfoBtn').addEventListener('click', () => {
   openModal('Edit Contact Info', 'Updates are visible immediately on the page.', `
     <div class="modal-field"><label>Email</label><input id="i_email" type="email" value="${document.getElementById('contactEmail').textContent}"></div>
@@ -735,7 +600,6 @@ document.getElementById('editInfoBtn').addEventListener('click', () => {
   }, 'Save Changes');
 });
 
-// ── EDIT ABOUT ──
 document.getElementById('editAboutBtn').addEventListener('click', () => {
   openModal('Edit About Text', 'Update your bio paragraphs.', `
     <div class="modal-field"><label>Paragraph 1</label><textarea id="a_p1" style="height:80px">${document.getElementById('aboutP1').textContent}</textarea></div>
@@ -753,7 +617,6 @@ document.getElementById('editAboutBtn').addEventListener('click', () => {
   }, 'Save Changes');
 });
 
-// ── CONTACT FORM (Formspree) ──
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('contactSubmitBtn');
@@ -761,11 +624,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   btn.disabled = true;
   const data = new FormData(this);
   try {
-    const res = await fetch(FORMSPREE, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data
-    });
+    const res = await fetch(FORMSPREE, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data });
     const json = await res.json();
     if (json.ok || res.ok) {
       document.getElementById('formSuccess').style.display = 'block';
@@ -783,7 +642,6 @@ document.getElementById('contactForm').addEventListener('submit', async function
   }
 });
 
-// ── TOAST ──
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -791,7 +649,6 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-// ── SAVE & DOWNLOAD ──
 document.getElementById('saveDownloadBtn').addEventListener('click', () => {
   const currentPhotos = JSON.stringify(photos);
   const email = document.getElementById('contactEmail').textContent;
@@ -806,12 +663,8 @@ document.getElementById('saveDownloadBtn').addEventListener('click', () => {
   const p3 = document.getElementById('aboutP3').textContent;
 
   let html = document.documentElement.outerHTML;
-
-  // Update photos array
   html = html.replace(/let photos = \[[\s\S]*?\];/, 'let photos = ' + currentPhotos + ';');
   html = html.replace(/let nextId = \d+;/, 'let nextId = ' + nextId + ';');
-
-  // Update contact details
   html = html.replace(/(<a[^>]*id="contactEmail"[^>]*href=")[^"]*(")/g, '$1mailto:' + emailHref + '$2');
   html = html.replace(/(<a[^>]*id="contactEmail"[^>]*>)[^<]*(<\/a>)/g, '$1' + email + '$2');
   html = html.replace(/(<a[^>]*id="contactPhone"[^>]*href=")[^"]*(")/g, '$1tel:' + phoneHref + '$2');
@@ -819,22 +672,14 @@ document.getElementById('saveDownloadBtn').addEventListener('click', () => {
   html = html.replace(/(<span[^>]*id="contactLocation"[^>]*>)[^<]*(<\/span>)/g, '$1' + location + '$2');
   html = html.replace(/(<a[^>]*id="contactInstagram"[^>]*href=")[^"]*(")/g, '$1' + instagramHref + '$2');
   html = html.replace(/(<a[^>]*id="contactInstagram"[^>]*>)[^<]*(<\/a>)/g, '$1' + instagram + '$2');
-
-  // Update about text
   html = html.replace(/(<p[^>]*id="aboutP1"[^>]*>)[^<]*(<\/p>)/g, '$1' + p1 + '$2');
   html = html.replace(/(<p[^>]*id="aboutP2"[^>]*>)[^<]*(<\/p>)/g, '$1' + p2 + '$2');
   html = html.replace(/(<p[^>]*id="aboutP3"[^>]*>)[^<]*(<\/p>)/g, '$1' + p3 + '$2');
-
-  // Always strip dev mode state before saving
-  html = html.replace(/class="dev-badge"/g, 'class="dev-badge"');
-  html = html.replace(/class="edit-toolbar"/g, 'class="edit-toolbar"');
-  // Reset dev modal back to step 1
+  html = html.replace(/class="dev-badge show"/g, 'class="dev-badge"');
+  html = html.replace(/class="edit-toolbar show"/g, 'class="edit-toolbar"');
   html = html.replace(/id="devStep1"[^>]*style="[^"]*"/g, 'id="devStep1"');
   html = html.replace(/id="devStep2"[^>]*style="[^"]*"/g, 'id="devStep2" style="display:none;"');
   html = html.replace(/id="devModalBtn"[^>]*style="[^"]*"/g, 'id="devModalBtn" style="display:none;"');
-  html = html.replace(/id="sendOtpBtn"[^>]*style="[^"]*"[^>]*disabled=""/g, 'id="sendOtpBtn"');
-  html = html.replace(/id="sendOtpBtn"[^>]*disabled=""/g, 'id="sendOtpBtn"');
-  // Remove any leftover toast text
   html = html.replace(/(<div class="toast"[^>]*>)[^<]*(<\/div>)/, '$1$2');
 
   const blob = new Blob([html], { type: 'text/html' });
@@ -847,10 +692,7 @@ document.getElementById('saveDownloadBtn').addEventListener('click', () => {
   showToast('Downloaded! Now upload index.html to GitHub.');
 });
 
-// ── INIT ──
 renderGallery();
 </script>
-
-
-<grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration>
-</body></html>
+</body>
+</html>
